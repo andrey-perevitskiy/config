@@ -1,4 +1,4 @@
-export PS1="\[\e[39m\]\u@\h:\w\$ \[\e[39m\]"
+export PS1="\[\e[37m\]\u@\h:\w\$ \[\e[39m\]"
 
 #export PS1="\[\e[38;5;196m\][\[$(tput sgr0)\]\[\e[38;5;46m\]\t\\"\
 #"[$(tput sgr0)\]\[\e[38;5;196m\]][\[$(tput sgr0)\]\[\e[38;5;7m\]\w\\"\
@@ -14,8 +14,23 @@ alias clrea=clear
 alias claer=clear
 alias celar=clear
 alias clare=clear
-
 alias mutt="mutt -e 'set crypt_use_gpgme=no'"
+
+# safely removing
+function rm {
+    if [ $# -gt 1 ] && [[ $1 == "-rf" ]]; then
+        # we have "rm -rf ..."
+
+        read -p "Do you really want to remove this _force_ (Yy/Nn)?" c
+        if [[ $c == *[Yy] ]]; then
+            /bin/rm $@
+        fi
+    else
+        # we have "rm ..."
+
+        /bin/rm $@
+    fi
+}
 
 # i-beam blinking cursor
 #printf '\e[5 q\r'
