@@ -1,0 +1,108 @@
+!  -------------
+! | ISO toggles |
+!  -------------
+URxvt.iso14755: false
+
+!  ------------------------
+! | URxvt general settings |
+!  ------------------------
+URxvt.termName: rxvt-unicode
+URxvt.scrollBar: false
+URxvt.background: #000000
+URxvt.foreground: #FFFFFF
+URxvt.insecure: false
+
+!  --------------
+! | Xft settings |
+!  --------------
+Xft.dpi: 82
+Xft.antialias: true
+Xft.hinting: true
+Xft.rgba: rgb
+Xft.autohint: false
+Xft.hintstyle: hintfull
+Xft.lcdfilter: lcddefault
+
+!  ---------------------
+! | URxvt font settings |
+!  ---------------------
+URxvt.font: xft:Terminus (TTF):pixelsize=12:Medium
+URxvt.boldFont: xft:Terminus (TTF):pixelsize=12:Bold
+URxvt.italicFont: xft:Terminus (TTF):pixelsize=12:Italic
+URxvt.boldItalicFont: xft:Terminus (TTF):pixelsize=12:Bold Italic
+!URxvt.font: xft:DejaVu Sans Mono:pixelsize=8
+!URxvt.boldFont: xft:DejaVu Sans Mono:pixelsize=8:Bold
+!URxvt.italicFont: xft:DejaVu Sans Mono:pixelsize=8:Italic
+!URxvt.boldItalicFont: xft:DejaVu Sans Mono:pixelsize=8:Bold Italic
+
+URxvt.letterSpace: 1
+URxvt.lineSpace: -1
+
+URxvt.saveLines: 30000
+
+!  ------------------
+! | URxvt extensions |
+!  ------------------
+URxvt.perl-ext-common: default,matcher,vtwheel
+URxvt.perl-ext: tabbed
+URxvt.perl-lib: /home//.urxvt/
+
+! 'tabbed' extension settings
+URxvt.tabbed.tabbar-fg: 8
+URxvt.tabbed.tabbar-bg: 233
+URxvt.tabbed.tab-fg: 15
+URxvt.tabbed.tab-bg: 8
+URxvt.tabbed.new-button: false
+
+!  ------------
+! | URxvt keys |
+!  ------------
+URxvt.keysym.Home: \033[1~
+URxvt.keysym.End: \033[4~
+
+!  -----------------
+! | URxvt shortcuts |
+!  -----------------
+URxvt.keysym.Control-0x2b: perl:font-size:increase
+URxvt.keysym.Control-0x2d: perl:font-size:decrease
+URxvt.keysym.Control-Up: \033[1;5A
+URxvt.keysym.Control-Down: \033[1;5B
+URxvt.keysym.Control-Left: \033[1;5D
+URxvt.keysym.Control-Right: \033[1;5C
+
+!  --------------
+! | URxvt colors |
+!  --------------
+URxvt.color0: #000000
+URxvt.color1: #B21818
+URxvt.color2: #18B218
+URxvt.color3: #B26818
+URxvt.color4: #1818B2
+URxvt.color5: #B218B2
+URxvt.color6: #18B2B2
+URxvt.color7: #B2B2B2
+URxvt.color8: #686868
+URxvt.color9: #FF5454
+URxvt.color10: #54FF54
+URxvt.color11: #FFFF54
+URxvt.color12: #5454FF
+URxvt.color13: #FF54FF
+URxvt.color14: #54FFFF
+URxvt.color15: #FFFFFF
+
+!  ----------------------
+! | URxvt other settings |
+!  ----------------------
+URxvt.UrlLauncher: /usr/bin/chromium
+URxvt.matcher.button: C1
+
+! Transparency
+!URxvt.transparent: true
+!URxvt.shading: 40
+
+! Blinking cursor
+!URxvt.cursorBlink: 1
+
+URxvt.scrollTtyOutput: false
+URxvt.scrollWithBuffer: true
+URxvt.scrollTtyKeypress: true
