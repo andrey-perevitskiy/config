@@ -53,9 +53,9 @@ MapToggle <F3> hlsearch
 nmap <F5> :call RemoveTrailSpaces()<CR>
 MapShowHiddenChars <F8>
 MapToggle <F9> number
-nmap <F10> :IndentLinesToggle<CR> " toggle indent lines
-nmap <F11> :AcpEnable
-nmap <F12> :AcpDisable
+nmap <F10> :IndentLinesToggle<CR>
+nmap <F11> :AcpEnable<CR>
+nmap <F12> :AcpDisable<CR>
 nmap <PageUp> <Up><Up><Up><Up><Up><Up><Up><Up><Up><Up>
     \<Up><Up><Up><Up><Up><Up><Up><Up><Up><Up>
     \<Up><Up><Up><Up><Up><Up><Up><Up><Up><Up>
@@ -82,6 +82,10 @@ let g:acp_behaviorKeywordLength = 4
 "  -----------
 map <C-a> :tabp<CR>
 map <C-d> :tabn<CR>
+
+" Autocompletion popup show shortcut
+"inoremap <expr> <C-Space> pumvisible() ? "<C-u>" : "<C-n>"
+"imap <C-@> <C-Space>
 
 " Leader shortcuts
 let mapleader = ','

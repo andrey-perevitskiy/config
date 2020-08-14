@@ -1,10 +1,8 @@
-syn region String start=/\v"/ skip=/\v\\./ end=/\v"/
-
 " Normal text
 hi Normal       ctermfg=7    ctermbg=233
 
 " Comment
-hi Comment      ctermfg=6    ctermbg=233  "cterm=italic
+hi Comment      ctermfg=38   ctermbg=233  "cterm=italic
 
 " Statements
 hi Statement    ctermfg=8    ctermbg=233  "cterm=bold
@@ -15,7 +13,7 @@ hi Operator     ctermfg=8    ctermbg=233  "cterm=bold
 hi Keyword      ctermfg=8    ctermbg=233  "cterm=bold
 
 " Constants
-hi Constant     ctermfg=7    ctermbg=233
+hi Constant     ctermfg=8    ctermbg=233
 hi String       ctermfg=8    ctermbg=233
 hi Character    ctermfg=8    ctermbg=233
 hi Number       ctermfg=8    ctermbg=233
@@ -37,26 +35,25 @@ hi Identifier   ctermfg=8    ctermbg=233
 hi Function     ctermfg=8    ctermbg=233
 
 " Preprocessor
-hi PreProc      ctermfg=2    ctermbg=233
-hi Include      ctermfg=2    ctermbg=233
-hi Define       ctermfg=2    ctermbg=233
-hi Macro        ctermfg=2    ctermbg=233
-hi PreCondit    ctermfg=2    ctermbg=233
+hi PreProc      ctermfg=34   ctermbg=233
+hi Include      ctermfg=34   ctermbg=233
+hi Define       ctermfg=34   ctermbg=233
+hi Macro        ctermfg=34   ctermbg=233
+hi PreCondit    ctermfg=34   ctermbg=233
 
 " Tabs bar
 hi TabLine      ctermfg=8    ctermbg=233  cterm=none   " inactive tab page label
-hi TabLineFill  ctermfg=233  ctermbg=7                 " empty tab line, where are no labels
+hi TabLineFill  ctermfg=233  ctermbg=7                 " empty tab line (where are no labels)
 hi TabLineSel   ctermfg=7    ctermbg=233               " active tab page label
 
 " Line numbers
 hi LineNr       ctermfg=8    ctermbg=233
-hi ColorColumn  ctermfg=7    ctermbg=8
 
 " Popup menu
-hi Pmenu        ctermfg=7    ctermbg=8
-hi PmenuSel     ctermfg=7    ctermbg=8
-hi PmenuSbar    ctermfg=7    ctermbg=8
-hi PmenuThumb   ctermfg=7    ctermbg=8
+hi Pmenu        ctermfg=7    ctermbg=235               " normal item
+hi PmenuSel     ctermfg=7    ctermbg=237               " selected item
+hi PmenuSbar    ctermfg=7    ctermbg=235               " scrollbar
+hi PmenuThumb   ctermfg=7    ctermbg=234               " thumb of the scrollbar
 
 " Visual mode selection
 hi Visual       ctermfg=0    ctermbg=2    cterm=none
@@ -75,3 +72,4 @@ hi Todo         ctermfg=0    ctermbg=7
 hi VertSplit    ctermfg=0    ctermbg=7
 hi NonText      ctermfg=7    ctermbg=233
 hi Error        ctermfg=none ctermbg=233
+hi ColorColumn  ctermfg=7    ctermbg=235

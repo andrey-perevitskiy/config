@@ -38,7 +38,7 @@ URxvt.boldItalicFont: xft:Terminus (TTF):pixelsize=12:Bold Italic
 URxvt.letterSpace: 1
 URxvt.lineSpace: -1
 
-URxvt.saveLines: 30000
+URxvt.saveLines: 10000
 
 !  ------------------
 ! | URxvt extensions |
