@@ -18,37 +18,44 @@ endfunction
 
 function RemoveTrailSpaces()
     :let _s = @/
-    :%s/\s\+$//e
     :let @/ = _s
+
+    :%s/\s\+$//e
 endfunction
 
-" Linking
+" Linking the functions
 command -nargs=+ MapToggle call MapToggle(<f-args>)
 command -nargs=+ MapShowHiddenChars call MapShowHiddenChars(<f-args>)
 
 "  ------
 " | Sets |
 "  ------
-set showmatch " show matching braces
-set autowrite " save after :next and :make
-set number " show line numbers
+" Show matching braces
+set showmatch
+" Save after :next and :make
+set autowrite
+" Show line numbers
+set number
 set nostartofline
 set tabpagemax=50
-set colorcolumn=80 " view max width column
-set mouse=a " make mouse scrolling faster
+" View max width column
+set colorcolumn=80
+" Make mouse scrolling faster
+set mouse=a
 "set scrolloff=10
 "set cursorline
 "set formatoptions+=r
 
-" Indentation
+" | Indentation |
 set shiftwidth=4
-set tabstop=4 " tab character size
+" Tab character size
+set tabstop=4
 set autoindent
-set et " don't insert spaces in the tab characters
+set et
 
-"  ------
-" | Keys |
-"  ------
+"  --------------
+" | Key bindings |
+"  --------------
 MapToggle <F3> hlsearch
 nmap <F5> :call RemoveTrailSpaces()<CR>
 MapShowHiddenChars <F8>
@@ -63,20 +70,6 @@ nmap <PageDown> <Down><Down><Down><Down><Down><Down><Down><Down><Down><Down>
     \<Down><Down><Down><Down><Down><Down><Down><Down><Down><Down>
     \<Down><Down><Down><Down><Down><Down><Down><Down><Down><Down>
 
-"  ---------------------
-" | Code autocompletion |
-"  ---------------------
-imap {<CR> {<CR><CR>}<UP><TAB>
-"inoremap ( ()<left>
-"inoremap { {}<left>
-"inoremap \" \""<left> \""
-"inoremap ' ''<left>
-"inoremap [ []<left>
-
-" ACP
-let g:acp_enableAtStartup = 0
-let g:acp_behaviorKeywordLength = 4
-
 "  -----------
 " | Shortcuts |
 "  -----------
@@ -90,12 +83,15 @@ map <C-d> :tabn<CR>
 " Leader shortcuts
 let mapleader = ','
 
-nmap <Leader>w :w!<CR> " fast saving
-nmap <Leader>f :set hlsearch!<CR> " marks all searched words
-noremap <Leader>c "+y " copy visual block
+" Fast saving
+nmap <Leader>w :w!<CR>
+" Marks all searched words
+nmap <Leader>f :set hlsearch!<CR>
+" Copy visual block
+map <Leader>c "+y
 
 "  -----------------------
-" | Languages preferences |
+" | Language preferences |
 "  -----------------------
 filetype plugin indent on
 
@@ -105,8 +101,18 @@ au BufRead,BufNewFile *.java set et ts=4 sw=4 cc=80
 "  --------------
 " | Other things |
 "  --------------
-syntax on " enable color highlighting
-colorscheme scheme " change color scheme
+" Enable color highlighting
+syntax on
+" Change color scheme
+colorscheme scheme
+
+" | Code autocompletion |
+imap {<CR> {<CR><CR>}<UP><TAB>
+"imap ( ()<left>
+"imap { {}<left>
+"imap \" \""<left> \""
+"imap ' ''<left>
+"imap [ []<left>
 
 " Show full path of the file in the tabs
 "source mytabline.vim
@@ -115,5 +121,16 @@ colorscheme scheme " change color scheme
 " Retab some file
 " set ts=2 noet | retab! | set et ts=4 | retab
 
-let g:indentLine_color_term = 237 " change the color of indentLines
-"let g:indentLine_char = '|' " change the indentLine char
+"  -----------------
+" | Plugin settings |
+"  -----------------
+" Include plugins
+source ~/.vim/plugins/indentLine.vim
+
+" | ACP |
+let g:acp_enableAtStartup = 0
+let g:acp_behaviorKeywordLength = 4
+
+" | indentLine |
+let g:indentLine_color_term = 237
+"let g:indentLine_char = '|'
