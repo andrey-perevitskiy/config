@@ -130,11 +130,13 @@ alias claer=clear
 alias celar=clear
 alias clare=clear
 alias mutt="mutt -e 'set crypt_use_gpgme=no'"
+alias gdb=~/documents/sources/gdb/gdb-8.2.1/gdb/gdb
+alias cmake=~/documents/sources/CMake/bin/cmake
 
 # safely removing
 function rm {
     if [ $# -gt 1 ] && [[ $1 == "-rf" ]]; then
-        # we have "rm -rf ..."
+        # "rm -rf ..."
 
         echo -n "Do you really want to REMOVE "
 
@@ -144,12 +146,12 @@ function rm {
             echo -n "${cmd} "
         done
 
-        read -p "FORCE (Yy/Nn)?" c
+        read -p "(?) ([n]/y): " c
         if [[ $c == *[Yy] ]]; then
             /bin/rm $@
         fi
     else
-        # we have "rm ..."
+        # "rm ..."
 
         /bin/rm $@
     fi
@@ -157,7 +159,10 @@ function rm {
 
 export C_INCLUDE_PATH=$HOME/local/include
 export LIBRARY_PATH=$HOME/local/lib
-export LD_LIBRARY_PATH=$HOME/local/lib
+#export LD_LIBRARY_PATH=$HOME/local/lib
+export RANGER_LOAD_DEFAULT_RC=false
+export VISUAL=vim
+export EDITOR=vim
 
 # i-beam blinking cursor
 #printf '\e[5 q\r'

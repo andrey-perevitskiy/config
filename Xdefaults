@@ -30,10 +30,10 @@ URxvt.font: xft:Terminus (TTF):pixelsize=12:Medium
 URxvt.boldFont: xft:Terminus (TTF):pixelsize=12:Bold
 URxvt.italicFont: xft:Terminus (TTF):pixelsize=12:Italic
 URxvt.boldItalicFont: xft:Terminus (TTF):pixelsize=12:Bold Italic
-!URxvt.font: xft:DejaVu Sans Mono:pixelsize=8
-!URxvt.boldFont: xft:DejaVu Sans Mono:pixelsize=8:Bold
-!URxvt.italicFont: xft:DejaVu Sans Mono:pixelsize=8:Italic
-!URxvt.boldItalicFont: xft:DejaVu Sans Mono:pixelsize=8:Bold Italic
+!URxvt.font: xft:DejaVu Sans Mono:pixelsize=12
+!URxvt.boldFont: xft:DejaVu Sans Mono:pixelsize=12:Bold
+!URxvt.italicFont: xft:DejaVu Sans Mono:pixelsize=12:Italic
+!URxvt.boldItalicFont: xft:DejaVu Sans Mono:pixelsize=12:Bold Italic
 
 URxvt.letterSpace: 1
 URxvt.lineSpace: -1
