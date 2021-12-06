@@ -1,28 +1,28 @@
-cflags = -Wall -Wextra -Iinclude -g
-ldeps  = -g
-
-srcs_dir = src
-objs_dir = obj
-bin_dir  = bin
-
-srcs = $(addprefix $(srcs_dir)/,main.c)
-objs = $(srcs:$(srcs_dir)/%.c=$(objs_dir)/%.o)
+CC = gcc
+CFLAGS = -Wall -Wextra -Iinclude
+LDFLAGS =
+SRC_DIR = src
+OBJ_DIR = obj
+BIN_DIR = bin
+SRC = $(addprefix $(SRC_DIR)/,main.c)
+OBJ = $(SRC:$(SRC_DIR)/%.c=$(OBJ_DIR)/%.o)
+BIN_NAME = prog
 
 .PHONY: all
-all: $(bin_dir)/prog
+all: $(BIN_DIR)/$(BIN_NAME)
 
-$(bin_dir)/prog: $(objs) | $(bin_dir)
-	@gcc $(ldeps) -o $@ $^
+$(BIN_DIR)/$(BIN_NAME): $(OBJ) | $(BIN_DIR)
+	$(CC) $(LDFLAGS) -o $@ $^
 
-$(objs_dir)/%.o: $(srcs_dir)/%.c | $(objs_dir)
-	@gcc $(cflags) -c $< -o $@
+$(OBJ_DIR)/%.o: $(SRC_DIR)/%.c | $(OBJ_DIR)
+	$(CC) $(CFLAGS) -c $< -o $@
 
-$(objs_dir):
-	@[ -d $(objs_dir) ] || mkdir $(objs_dir)
+$(OBJ_DIR):
+	[ -d $(OBJ_DIR) ] || mkdir $(OBJ_DIR)
 
-$(bin_dir):
-	@[ -d $(bin_dir) ] || mkdir $(bin_dir)
+$(BIN_DIR):
+	[ -d $(BIN_DIR) ] || mkdir $(BIN_DIR)
 
 .PHONY: clean
 clean:
-	@rm -rf $(objs_dir) $(bin_dir)
+	rm -rf $(OBJ_DIR) $(BIN_DIR)
