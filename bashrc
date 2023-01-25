@@ -113,15 +113,14 @@ if ! shopt -oq posix; then
   fi
 fi
 
-export PS1="\[\e[37m\]\u@\h:\w\$ \[\e[39m\]"
-
 #export PS1="\[\e[38;5;196m\][\[$(tput sgr0)\]\[\e[38;5;46m\]\t\\"\
 #"[$(tput sgr0)\]\[\e[38;5;196m\]][\[$(tput sgr0)\]\[\e[38;5;7m\]\w\\"\
 #"[$(tput sgr0)\]\[\e[38;5;196m\]][\[$(tput sgr0)\]\[\e[38;5;51m\]\\$\\"\
 #"[$(tput sgr0)\]\[\e[38;5;196m\]]\[$(tput sgr0)\]\[\e[38;5;7m\]"\
 #"\u@\h: \[\e[0;39m\]"
+export PS1="\[\e[37m\]\u@\h:\w\$ \[\e[39m\]"
 
-# output color
+# Output color
 #trap 'printf "\e[37m"' DEBUG
 
 alias clera=clear
@@ -129,21 +128,20 @@ alias clrea=clear
 alias claer=clear
 alias celar=clear
 alias clare=clear
+alias ckear=clear
+alias lcear=clear
+alias lcaer=clear
 alias mutt="mutt -e 'set crypt_use_gpgme=no'"
-alias gdb=~/documents/sources/gdb/gdb-8.2.1/gdb/gdb
-alias cmake=~/documents/sources/CMake/bin/cmake
 
-# safely removing
+# Safely remove
 function rm {
     if [ $# -gt 1 ] && [[ $1 == "-rf" ]]; then
-        # "rm -rf ..."
-
-        echo -n "Do you really want to REMOVE "
+        echo -n "Do you really want to "
+        echo "REMOVE "
 
         for path in $(echo $@ | cut -d' ' -f2-); do
             cmd=$(realpath $path)
-
-            echo -n "${cmd} "
+            echo "${cmd} "
         done
 
         read -p "(?) ([n]/y): " c
@@ -151,23 +149,22 @@ function rm {
             /bin/rm $@
         fi
     else
-        # "rm ..."
-
         /bin/rm $@
     fi
 }
 
 export C_INCLUDE_PATH=$HOME/local/include
 export LIBRARY_PATH=$HOME/local/lib
-#export LD_LIBRARY_PATH=$HOME/local/lib
+export LD_LIBRARY_PATH=$HOME/local/lib
 export RANGER_LOAD_DEFAULT_RC=false
 export VISUAL=vim
 export EDITOR=vim
 
-# i-beam blinking cursor
-#printf '\e[5 q\r'
+# Cursor
+#printf '\033[5 q\r' # I-beam blink on
+#printf '\033[6 q\r' # I-beam blink off
 
-# man colorize
+# Man colorize
 #export LESS_TERMCAP_mb=$'\e[5;37m'    # start blink
 #export LESS_TERMCAP_md=$'\e[1;37m'    # start bold
 #export LESS_TERMCAP_me=$'\e[0;37m'    # turn off bold, blink and underline
@@ -198,3 +195,4 @@ export LS_COLORS="rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:"\
 "*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:"\
 "*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:"\
 "*.opus=00;36:*.spx=00;36:*.xspf=00;36:no=00;37"
+. "$HOME/.cargo/env"

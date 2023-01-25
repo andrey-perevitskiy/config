@@ -32,6 +32,7 @@ command -nargs=+ MapShowHiddenChars call MapShowHiddenChars(<f-args>)
 "  ------
 " Show matching braces
 set showmatch
+set noshowmode
 " Save after :next and :make
 set autowrite
 " Show line numbers
@@ -68,6 +69,7 @@ nmap <PageUp> <Up><Up><Up><Up><Up><Up><Up><Up><Up><Up>
 nmap <PageDown> <Down><Down><Down><Down><Down><Down><Down><Down><Down><Down>
     \<Down><Down><Down><Down><Down><Down><Down><Down><Down><Down>
     \<Down><Down><Down><Down><Down><Down><Down><Down><Down><Down>
+imap <silent><expr> <TAB> pumvisible() ? "\<CR>" : "\<TAB>"
 
 "  -----------
 " | Shortcuts |
@@ -103,8 +105,8 @@ filetype plugin on
 imap {<CR> {<CR><CR>}<UP><TAB>
 "imap ( ()<left>
 "imap { {}<left>
-"imap \" \""<left> \""
-"imap ' ''<left>
+"inoremap \" \""<left>
+"inoremap ' ''<left>
 "imap [ []<left>
 
 " Retab some file
@@ -114,8 +116,11 @@ imap {<CR> {<CR><CR>}<UP><TAB>
 " | Plugin settings |
 "  -----------------
 " | indentLine |
+"let b:indentLine_enabled = 0
 let g:indentLine_color_term = 237
 "let g:indentLine_char = '|'
 
 " | clang_compete |
-let g:clang_library_path='/usr/lib/llvm-7/lib/libclang.so.1'
+let g:clang_library_path = '/usr/lib/llvm-7/lib/libclang.so.1'
+
+let g:jedi#show_call_signatures = 2
