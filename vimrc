@@ -32,7 +32,6 @@ command -nargs=+ MapShowHiddenChars call MapShowHiddenChars(<f-args>)
 "  ------
 " Show matching braces
 set showmatch
-set noshowmode
 " Save after :next and :make
 set autowrite
 " Show line numbers
@@ -46,7 +45,9 @@ set mouse=a
 "set scrolloff=10
 "set cursorline
 "set formatoptions+=r
-set cot=menu,noinsert
+set completeopt=menu,noinsert,menuone
+set conceallevel=2
+set concealcursor=vin
 
 " | Indentation |
 set shiftwidth=4
@@ -59,6 +60,7 @@ set et
 " | Key bindings |
 "  --------------
 MapToggle <F3> hlsearch
+nmap <F4> :Autoformat<CR>
 nmap <F5> :call RemoveTrailSpaces()<CR>
 MapShowHiddenChars <F8>
 MapToggle <F9> number
@@ -77,12 +79,12 @@ imap <silent><expr> <TAB> pumvisible() ? "\<CR>" : "\<TAB>"
 map <C-a> :tabp<CR>
 map <C-d> :tabn<CR>
 
+" Leader shortcuts
+let mapleader = ','
+
 " Autocompletion shortcuts
 imap <expr> <C-Space> "<C-n>"
 imap <C-@> <C-Space>
-
-" Leader shortcuts
-let mapleader = ','
 
 " Fast saving
 nmap <Leader>w :w!<CR>
@@ -101,7 +103,7 @@ colorscheme scheme
 " Enable extension check
 filetype plugin on
 
-" | Code autocompletion |
+" | Character autocompletion |
 imap {<CR> {<CR><CR>}<UP><TAB>
 "imap ( ()<left>
 "imap { {}<left>
@@ -112,6 +114,8 @@ imap {<CR> {<CR><CR>}<UP><TAB>
 " Retab some file
 " set ts=2 noet | retab! | set et ts=4 | retab
 
+let g:vim_json_conceal = 0
+
 "  -----------------
 " | Plugin settings |
 "  -----------------
@@ -121,6 +125,12 @@ let g:indentLine_color_term = 237
 "let g:indentLine_char = '|'
 
 " | clang_compete |
-let g:clang_library_path = '/usr/lib/llvm-7/lib/libclang.so.1'
+let g:clang_library_path = '/usr/lib/llvm-13/lib/libclang-13.so.1'
+let g:clang_snippets = 1
+let g:clang_conceal_snippets = 1
+let g:clang_snippets_engine = 'clang_complete'
+let g:clang_complete_copen = 1
+let g:clang_complete_macros = 1
+let g:clang_complete_patterns = 0
 
-let g:jedi#show_call_signatures = 2
+"let g:jedi#show_call_signatures = 2

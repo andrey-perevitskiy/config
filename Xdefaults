@@ -35,8 +35,8 @@ Xft.hintstyle: hintfull
 Xft.lcdfilter: lcddefault
 
 ! Font settings
-!URxvt.font: xft:Terminus (TTF):pixelsize=12:Medium
-URxvt.font: xft:Ticketing:pixelsize=10:Medium
+URxvt.font: xft:Terminus (TTF):pixelsize=12:Medium
+!URxvt.font: xft:Ticketing:pixelsize=10:Medium
 !URxvt.font: xft:DejaVu Sans Mono:pixelsize=12
 !URxvt.boldFont: xft:DejaVu Sans Mono:pixelsize=12:Bold
 !URxvt.italicFont: xft:DejaVu Sans Mono:pixelsize=12:Italic
@@ -46,9 +46,9 @@ URxvt.lineSpace: -1
 URxvt.saveLines: 10000
 
 ! Extensions
-URxvt.perl-ext-common: default,matcher,vtwheel
-URxvt.perl-ext: tabbed
-URxvt.perl-lib: /home//.urxvt/
+URxvt.perl-ext-common: default,matcher,vtwheel,font-size
+URxvt.perl-ext: -tabbed
+URxvt.perl-lib: /home/user/.urxvt/
 
 ! 'tabbed' extension settings
 URxvt.tabbed.tabbar-fg: 8
@@ -60,14 +60,10 @@ URxvt.tabbed.new-button: false
 ! Keys
 URxvt.keysym.Home: \033[1~
 URxvt.keysym.End: \033[4~
-
-! Shortcuts
-URxvt.keysym.Control-0x2b: perl:font-size:increase
-URxvt.keysym.Control-0x2d: perl:font-size:decrease
-URxvt.keysym.Control-Up: \033[1;5A
-URxvt.keysym.Control-Down: \033[1;5B
-URxvt.keysym.Control-Left: \033[1;5D
-URxvt.keysym.Control-Right: \033[1;5C
+URxvt.keysym.C-Up: \033[1;5A
+URxvt.keysym.C-Down: \033[1;5B
+URxvt.keysym.C-Left: \033[1;5D
+URxvt.keysym.C-Right: \033[1;5C
 
 ! Other settings
 URxvt.UrlLauncher: /usr/bin/chromium
