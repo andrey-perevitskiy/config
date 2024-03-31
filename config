@@ -165,9 +165,9 @@ bindsym $mod+r mode "resize"
 bindsym --release Print exec --no-startup-id scrot -s ~/scrot.png -e \
     'xclip -selection clipboard -t image/png -i $f' && rm ~/scrot.png
 
-#  ---------------
-# | Window Colors |
-#  ---------------
+#  -----------------
+# | Window's solors |
+#  -----------------
 # class                 border  backgr. text    indicator child_border
 client.focused          #333333 #333333 #dddddd #292d2e   #222222
 client.focused_inactive #333333 #5f676a #ffffff #484e50   #5f676a
@@ -181,9 +181,9 @@ client.background       #ffffff
 #bar {
 #    status_command i3status
 #
-#    #  --------------
-#    # | i3bar Colors |
-#    #  --------------
+#    #  ----------------
+#    # | i3bar's colors |
+#    #  ----------------
 #    colors {
 #        background         #121212
 #        statusline         #dddddd
@@ -198,6 +198,3 @@ client.background       #ffffff
 
 default_border pixel 1
 default_floating_border pixel 1
-
-exec_always --no-startup-id \
-    setxkbmap -layout 'us,ru' -option 'grp:caps_toggle,grp_led:scroll'

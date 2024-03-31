@@ -133,4 +133,7 @@ let g:clang_complete_copen = 1
 let g:clang_complete_macros = 1
 let g:clang_complete_patterns = 0
 
-"let g:jedi#show_call_signatures = 2
+" | jediVim |
+let g:jedi#show_call_signatures = 0
+let g:jedi#smart_auto_mappings = 1
+let g:jedi#use_tabs_not_buffers = 1

@@ -30,7 +30,7 @@ hi SpecialChar         ctermfg=8    ctermbg=233
 
 " Types
 hi Type                ctermfg=8    ctermbg=233  "cterm=bold
-hi StorageClass        ctermfg=8    ctermbg=233  "cterm=bold
+hi StorageClass        ctermfg=3    ctermbg=233  "cterm=bold
 hi Structure           ctermfg=8    ctermbg=233  "cterm=bold
 hi Typedef             ctermfg=8    ctermbg=233  "cterm=bold
 
@@ -82,4 +82,3 @@ hi jediFat             ctermfg=7    ctermbg=237  cterm=italic
 hi jediFatSymbol       ctermfg=7    ctermbg=237
 hi jediSpace           ctermfg=0    ctermbg=237
 hi jediIgnore          ctermfg=7    ctermbg=237
-
