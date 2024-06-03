@@ -20,12 +20,12 @@ URxvt.color12: #5454FF
 URxvt.color13: #FF54FF
 URxvt.color14: #54FFFF
 URxvt.color15: #FFFFFF
-URxvt.background: 0
+URxvt.background: #222222
 URxvt.foreground: 15
-URxvt.borderColor: #000000
+URxvt.borderColor: #222222
 URxvt.insecure: false
 
-! Xft settings
+! Font settings
 Xft.dpi: 82
 Xft.antialias: true
 Xft.hinting: true
@@ -33,14 +33,7 @@ Xft.rgba: rgb
 Xft.autohint: false
 Xft.hintstyle: hintfull
 Xft.lcdfilter: lcddefault
-
-! Font settings
 URxvt.font: xft:Terminus (TTF):pixelsize=12:Medium
-!URxvt.font: xft:Ticketing:pixelsize=10:Medium
-!URxvt.font: xft:DejaVu Sans Mono:pixelsize=12
-!URxvt.boldFont: xft:DejaVu Sans Mono:pixelsize=12:Bold
-!URxvt.italicFont: xft:DejaVu Sans Mono:pixelsize=12:Italic
-!URxvt.boldItalicFont: xft:DejaVu Sans Mono:pixelsize=12:Bold Italic
 URxvt.letterSpace: 1
 URxvt.lineSpace: -1
 URxvt.saveLines: 10000
@@ -48,13 +41,6 @@ URxvt.saveLines: 10000
 ! Extensions
 URxvt.perl-lib: /home/ksyrx/.urxvt/
 URxvt.perl-ext-common: default,matcher,-vtwheel,font-size
-
-! 'tabbed' extension settings
-URxvt.tabbed.tabbar-fg: 8
-URxvt.tabbed.tabbar-bg: 233
-URxvt.tabbed.tab-fg: 15
-URxvt.tabbed.tab-bg: 8
-URxvt.tabbed.new-button: false
 
 ! Keys
 URxvt.keysym.Home: \033[1~
@@ -64,22 +50,13 @@ URxvt.keysym.C-Down: \033[1;5B
 URxvt.keysym.C-Left: \033[1;5D
 URxvt.keysym.C-Right: \033[1;5C
 
-! Other settings
 URxvt.UrlLauncher: /usr/bin/google-chrome
 URxvt.matcher.button: C1
-
-! Transparency
-!URxvt.transparent: true
-!URxvt.shading: 40
-
-! Cursor settings
 URxvt.cursorBlink: false
 URxvt.cursorUnderline: false
-
 URxvt.scrollTtyOutput: false
 URxvt.scrollWithBuffer: true
 URxvt.scrollTtyKeypress: true
-
 URxvt.borderWidth: 0
 URxvt.internalBorder: 0
 URxvt.externalBorder: 0
